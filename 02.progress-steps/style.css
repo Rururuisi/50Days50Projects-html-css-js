@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: "Mulish", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,4 +12,93 @@ body {
     min-height: 100vh;
     overflow: hidden;
     margin: 0;
+    background-color: #f6f7fb;
+}
+
+.container {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.progress-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #e0e0e0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.progress {
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    background-color: #0091e9;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: width 0.6s ease-in;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    background-color: #fff;
+    border: 4px solid #e0e0e0;
+    border-radius: 20px;
+    transition: border 0.6s step-end;
+}
+
+.circle.active {
+    border: 4px solid #0091e9;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn {
+    width: 100px;
+    height: 35px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #0091e9;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#prev {
+    margin-right: 40px;
+}
+
+.btn:disabled {
+    background-color: #e0e0e0;
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        width: 80vw;
+    }
 }
