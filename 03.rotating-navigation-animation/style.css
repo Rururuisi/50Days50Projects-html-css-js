@@ -27,10 +27,16 @@ a {
 
 .article-container {
     width: 100%;
-    padding: 100px 200px;
+    padding: 6vw 12vw;
     transform-origin: top left;
     background-color: #fafafa;
     transition: transform 0.5s linear;
+}
+
+@media screen and (max-width: 700px) {
+    .article-container {
+        padding: 16vw 12vw;
+    }
 }
 
 .article-container h1,
