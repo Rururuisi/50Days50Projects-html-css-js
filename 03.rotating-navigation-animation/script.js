@@ -5,17 +5,17 @@ const article = document.querySelector(".article-container");
 const navItems = document.querySelectorAll(".nav-item");
 
 openBtn.addEventListener("click", () => {
-    action(false);
-})
-
-closeBtn.addEventListener("click", () => {
     action(true);
 })
 
-function action(isRotatePos) {
-    circle.style.transform = `rotate(${isRotatePos ? 0 : -90}deg)`;
-    article.style.transform = `rotate(${isRotatePos ? 0 : -20}deg)`;
+closeBtn.addEventListener("click", () => {
+    action(false);
+})
+
+function action(isOpen) {
+    circle.style.transform = `rotate(${isOpen ? -90 : 0}deg)`;
+    article.style.transform = `rotate(${isOpen ? -20 : 0}deg)`;
     navItems.forEach((curr, idx) => {
-        curr.style.transform = isRotatePos ? `translateX(-${100 + idx * 50}%)` : "translateX(0)";
+        curr.style.transform = isOpen ? "translateX(0)" : `translateX(-${100 + idx * 50}%)`;
     })
 }
