@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: auto;
+    margin: 0;
+}
+
+h1 {
+    font-size: 64px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    transition: width 1s ease-in-out;
+}
+
+.container.expand {
+    width: 75%;
+}
+
+.container.shrink {
+    width: 25%;
+}
+
+.station {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.split-left {
+    background: url("./ps.jpeg") no-repeat left center/cover;
+}
+
+.split-right {
+    background: url("./xbox.jpeg") no-repeat left center/cover;
+}
+
+.split-left .station {
+    background-color: rgba(87, 84, 236, 0.7);
+}
+
+.split-right .station {
+    background-color: rgba(43, 43, 43, 0.8);
+}
+
+button {
+    width: 240px;
+    height: 80px;
+    background-color: transparent;
+    color: #fff;
+    border: 3px solid #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+h1,
+button {
+    transform: translateY(-15vh);
+}
+
+.split-left button:hover {
+    background-color: #6333f5;
+    border: none;
+}
+
+.split-right button:hover {
+    background-color: #008106;
+    border: none;
+}
+
+@media screen and (max-width: 900px) {
+    h1 {
+        font-size: 42px;
+    }
+    button {
+        width: 150px;
+        height: 60px;
+        font-size: 16px;
+        border-width: 2px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+    .container {
+        width: 100%;
+        height: 50vh;
+        transition: height 1s ease-in-out;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    button {
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+        border-width: 1px;
+    }
+    h1,
+    button {
+        transform: translateY(0);
+    }
+    .container.expand {
+        width: 100%;
+        height: 75vh;
+    }
+    .container.shrink {
+        width: 100%;
+        height: 25vh;
+    }
+}
