@@ -2,16 +2,20 @@ const openBtn = document.querySelector("#open");
 const closeBtn = document.querySelector("#close");
 const circle = document.querySelector(".circle");
 const article = document.querySelector(".article-container");
+const navItems = document.querySelectorAll(".nav-item");
 
 openBtn.addEventListener("click", () => {
-    rotate(false);
+    action(false);
 })
 
 closeBtn.addEventListener("click", () => {
-    rotate(true);
+    action(true);
 })
 
-function rotate(isPos) {
-    circle.style.transform = `rotate(${isPos ? 0 : -90}deg)`;
-    article.style.transform = `rotate(${isPos ? 0 : -20}deg)`;
+function action(isRotatePos) {
+    circle.style.transform = `rotate(${isRotatePos ? 0 : -90}deg)`;
+    article.style.transform = `rotate(${isRotatePos ? 0 : -20}deg)`;
+    navItems.forEach((curr, idx) => {
+        curr.style.transform = isRotatePos ? `translateX(-${100 + idx * 50}%)` : "translateX(0)";
+    })
 }
