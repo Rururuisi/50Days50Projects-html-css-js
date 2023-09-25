@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+:root {
+    --bg-left-color: rgba(87, 84, 236, 0.7);
+    --bg-right-color: rgba(43, 43, 43, 0.8);
+    --button-left-hover-bg-color: #6333f5;
+    --button-right-hover-bg-color: #008106;
+    --speed: 1s;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -28,7 +36,7 @@ h1 {
     width: 50%;
     height: 100vh;
     overflow: hidden;
-    transition: width 1s ease-in-out;
+    transition: width var(--speed) ease-in-out;
 }
 
 .container.expand {
@@ -57,11 +65,11 @@ h1 {
 }
 
 .split-left .station {
-    background-color: rgba(87, 84, 236, 0.7);
+    background-color: var(--bg-left-color);
 }
 
 .split-right .station {
-    background-color: rgba(43, 43, 43, 0.8);
+    background-color: var(--bg-right-color);
 }
 
 button {
@@ -80,12 +88,12 @@ button {
 }
 
 .split-left button:hover {
-    background-color: #6333f5;
+    background-color: var(--button-left-hover-bg-color);
     border: none;
 }
 
 .split-right button:hover {
-    background-color: #008106;
+    background-color: var(--button-right-hover-bg-color);
     border: none;
 }
 
@@ -108,7 +116,7 @@ button {
     .container {
         width: 100%;
         height: 50vh;
-        transition: height 1s ease-in-out;
+        transition: height var(--speed) ease-in-out;
     }
     h1 {
         font-size: 24px;
