@@ -29,10 +29,6 @@ input {
     font-size: 18px;
 }
 
-input:focus {
-    outline: none;
-}
-
 .container h1 {
     margin: 0;
     margin-bottom: 30px;
@@ -54,6 +50,7 @@ input:focus {
 
 .form-control input:focus,
 .form-control input:valid {
+    outline: 0;
     border-color: lightblue;
 }
 
@@ -97,7 +94,7 @@ input:focus {
 .form-control input:focus+label span,
 .form-control input:valid+label span {
     color: lightblue;
-    transform: translateY(-30px);
+    transform: translateY(-35px);
 }
 
 @media screen and (max-width: 500px) {
