@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:wght@400;600;700&display=swap");
+* {
+    box-sizing: border-box;
+    font-family: "Muli", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto;
+    padding: 30px 15px 30px 15px;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.faq-container {
+    position: relative;
+    display: flex;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 70px 30px 30px;
+    margin: 10px;
+    background-color: transparent;
+    border: 1px solid #9fa4a8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.question {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.answer {
+    display: none;
+    margin-top: 30px;
+}
+
+.icon {
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.faq-container.active {
+    position: relative;
+    background-color: #fff;
+}
+
+.faq-container.active .faq:before,
+.faq-container.active .faq:after {
+    content: "\f075";
+    font-family: "Font Awesome 5 Free";
+    color: #2ecc71;
+    font-size: 7rem;
+    opacity: 0.2;
+    position: absolute;
+    top: 20px;
+}
+
+.faq-container.active .faq:after {
+    top: -10px;
+    left: -30px;
+    color: #3498db;
+    transform: rotateY(180deg);
+}
+
+.faq-container.active .icon {
+    background-color: #9fa4a8;
+    color: #fff;
+}
+
+.faq-container .fa-xmark,
+.faq-container.active .fa-chevron-down {
+    display: none;
+}
+
+.faq-container .fa-chevron-down,
+.faq-container.active .fa-xmark,
+.faq-container.active .answer {
+    display: block;
+}
