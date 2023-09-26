@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+* {
+    box-sizing: border-box;
+    font-family: "Mulish", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: auto;
+    margin: 0;
+    background-color: #2b88f0;
+}
+
+.container {
+    width: 600px;
+    max-width: 100%;
+}
+
+.container p {
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+}
+
+.choices-input {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    color: #000;
+    background-color: #fff;
+}
+
+.choices-input::before {
+    color: #666;
+    content: "Enter choice here...";
+}
+
+.choices-input.focus::before {
+    display: none;
+}
+
+.choices-input:focus {
+    outline: 0;
+}
+
+.choices {
+    margin-top: 25px;
+}
+
+.choices span {
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 8px 25px;
+    color: #fff;
+    background-color: #f0932b;
+    border-radius: 20px;
+}
