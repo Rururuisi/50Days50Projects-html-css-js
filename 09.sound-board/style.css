@@ -1,15 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 * {
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    font-family: "Mulish", sans-serif;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    text-align: center;
     min-height: 100vh;
     overflow: auto;
     margin: 0;
+    background-color: rgb(161, 100, 223);
+}
+
+.btn {
+    margin: 1rem;
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: rebeccapurple;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
 }
