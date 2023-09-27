@@ -1,7 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+:root {
+    --fill-water-color: #6ab3f8;
+    --main-cup-water-height: 0%;
+    --main-cup-empty-height: calc(100% - var(--main-cup-water-height));
+}
+
 * {
     box-sizing: border-box;
     font-family: "Mulish", sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: #fff;
 }
 
 body {
@@ -12,4 +22,91 @@ body {
     min-height: 100vh;
     overflow: auto;
     margin: 0;
+    padding: 20px 20px;
+    background-color: #3494e4;
+}
+
+h1 {
+    margin-bottom: 6px;
+    font-size: 36px;
+}
+
+.goal,
+.liters {
+    font-size: 20px;
+}
+
+.percentage {
+    font-size: 28px;
+}
+
+.main-cup *,
+.cup * {
+    color: #144fc6;
+}
+
+.main-cup,
+.cup {
+    border: 4px solid #144fc6;
+    background-color: #fff;
+}
+
+.main-cup,
+.cup,
+.empty,
+.water {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-cup {
+    position: relative;
+    width: 140px;
+    height: 320px;
+    border-radius: 0 0 40px 40px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.empty {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--main-cup-empty-height);
+    transition: height 0.3s linear;
+}
+
+.water {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--main-cup-water-height);
+    background-color: var(--fill-water-color);
+    transition: height 0.3s linear;
+}
+
+.cups-selector {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cup {
+    width: 50px;
+    height: 95px;
+    border-radius: 0 0 16px 16px;
+    cursor: pointer;
+}
+
+.cup.fill-water {
+    background-color: var(--fill-water-color);
+}
+
+.cup.fill-water * {
+    color: #fff;
 }
