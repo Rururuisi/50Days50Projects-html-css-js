@@ -16,9 +16,9 @@ const isToggleCup = (idx) => {
 
 const updateMainCup = () => {
         const filledCupsLen = document.querySelectorAll(`.${fillClass}`).length;
-        const fillWaterInLiter = cupVolume * filledCupsLen / 1000;
-        const emptyVolume = goalInLiter - fillWaterInLiter;
-        const waterDrinkPerc = fillWaterInLiter / goalInLiter * 100
+        const waterDinkLiter = cupVolume * filledCupsLen / 1000;
+        const emptyVolume = goalInLiter - waterDinkLiter;
+        const waterDrinkPerc = waterDinkLiter / goalInLiter * 100
         root.style.setProperty("--main-cup-water-height", `${waterDrinkPerc}%`);
         emptyLiter.innerText = `${emptyVolume}L`;
         waterPercentage.innerText = `${waterDrinkPerc > 0 ? `${waterDrinkPerc}%` : ""}`
