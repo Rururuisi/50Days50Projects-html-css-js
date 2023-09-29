@@ -26,5 +26,4 @@ function changeSlide(direction) {
     }
     sildeRight.style.transform = `translateY(-${activeSlideIndex * 100}vh)`;
     sildeLeft.style.transform = `translateY(${activeSlideIndex * 100}vh)`;
-
 }
