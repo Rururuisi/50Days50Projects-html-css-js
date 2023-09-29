@@ -15,19 +15,28 @@ let x, y;
 
 window.addEventListener("resize", setCanvasSize());
 
-canvas.addEventListener("mousedown", (e) => {
+canvas.addEventListener("mousedown", (e) => penDown(e));
+canvas.addEventListener("touchstart", (e) => penDown(e));
+
+const penDown = (e) => {
     isPress = true;
     x = e.offsetX;
     y = e.offsetY;
-})
+}
 
-canvas.addEventListener("mouseup", (e) => {
+canvas.addEventListener("mouseup", () => penUp());
+canvas.addEventListener("touchend", () => penUp());
+
+const penUp = () => {
     isPress = false;
     x = undefined;
     y = undefined;
-})
+}
 
-canvas.addEventListener("mousemove", (e) => {
+canvas.addEventListener("mousemove", (e) => penMove(e));
+canvas.addEventListener("touchmove", (e) => penMove(e));
+
+const penMove = (e) => {
     if (isPress) {
         const x2 = e.offsetX;
         const y2 = e.offsetY;
@@ -36,7 +45,7 @@ canvas.addEventListener("mousemove", (e) => {
         x = x2;
         y = y2;
     }
-})
+}
 
 decreaseBtn.addEventListener("click", () => {
     size = size - 5 < 5 ? 5 : size - 5;
