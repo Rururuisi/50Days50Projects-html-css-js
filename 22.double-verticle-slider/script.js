@@ -1,13 +1,13 @@
-const silderContainer = document.querySelector(".slider-container");
-const sildeLeft = document.querySelector(".left-slide");
-const sildeRight = document.querySelector(".right-slide");
+const sliderContainer = document.querySelector(".slider-container");
+const slideLeft = document.querySelector(".left-slide");
+const slideRight = document.querySelector(".right-slide");
 const upBtn = document.querySelector(".up-button");
 const downBtn = document.querySelector(".down-button");
-const slidesLen = sildeRight.querySelectorAll("div").length;
+const slidesLen = slideRight.querySelectorAll("div").length;
 
 let activeSlideIndex = 0;
 
-sildeLeft.style.top = `-${(slidesLen - 1) * 100}vh`;
+slideLeft.style.top = `-${(slidesLen - 1) * 100}vh`;
 
 upBtn.addEventListener("click", () => changeSlide("up"));
 downBtn.addEventListener("click", () => changeSlide("down"));
@@ -24,6 +24,6 @@ function changeSlide(direction) {
             activeSlideIndex = slidesLen - 1;
         }
     }
-    sildeRight.style.transform = `translateY(-${activeSlideIndex * 100}vh)`;
-    sildeLeft.style.transform = `translateY(${activeSlideIndex * 100}vh)`;
+    slideRight.style.transform = `translateY(-${activeSlideIndex * 100}vh)`;
+    slideLeft.style.transform = `translateY(${activeSlideIndex * 100}vh)`;
 }
