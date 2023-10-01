@@ -1,15 +1,165 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
 * {
     box-sizing: border-box;
-    font-family: "Mulish", sans-serif;
+    font-family: "Press Start 2P", sans-serif;
 }
 
 body {
+    min-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+    background-color: #516dff;
+    color: #fff;
+}
+
+a {
+    color: #fff;
+}
+
+h1 {
+    line-height: 1.4;
+}
+
+.btn {
+    background-color: #fff;
+    color: #516dff;
+    border: 0;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.screen {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    transition: margin 0.5s ease-out;
+}
+
+.screen.up {
+    margin-top: -100vh;
+}
+
+.insects-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.insects-list li {
+    margin: 10px;
+}
+
+.choose-insect-btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.choose-insect-btn:hover,
+.choose-insect-btn:focus {
+    color: #516dff;
+    background-color: #fff;
+    outline: none;
+}
+
+.choose-insect-btn:active {
+    background-color: #fff;
+}
+
+.choose-insect-btn img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.game-container {
+    position: relative;
+}
+
+.time,
+.score {
+    position: absolute;
+    top: 20px;
+}
+
+.time {
+    left: 20px;
+}
+
+.score {
+    right: 20px;
+}
+
+.message-container {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    transition: transform 0.4s ease-in;
+}
+
+.message {
+    text-align: center;
+    line-height: 1.7;
+    margin: 10px 0;
+}
+
+.msg-close-btn {
+    padding: 8px 16px;
+    font-size: 10px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.message-container.visible {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+
+.insect {
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    overflow: auto;
-    margin: 0;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    position: absolute;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.3s ease-in-out;
+    top: 200px;
+    left: 300px;
+}
+
+.insect.caught {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.insect img {
+    width: 100px;
+    height: 100px;
+}
+
+@media screen and (max-width: 500px) {
+    .time,
+    .score {
+        font-size: 14px;
+    }
 }
